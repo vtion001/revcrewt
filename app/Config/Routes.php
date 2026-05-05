@@ -10,3 +10,6 @@ $routes->get('/how-it-works', 'HowItWorks::index');
 $routes->get('/for-employers', 'ForEmployers::index');
 $routes->get('/for-talent', 'ForTalent::index');
 $routes->get('/pricing', 'Pricing::index');
+$routes->get('/employer/discover', 'Employer::index');
+$routes->get('/employer/talent/(:num)', 'Employer::talent/$1');
+$routes->get('/talent/profile', 'Talent::index');

@@ -1,5 +1,5 @@
 <?php
-$talentLoggedIn = session()->get('logged_in') && session()->get('role') === 'talent';
+$talentLoggedIn = ($isLoggedIn ?? false) || (session()->get('logged_in') && session()->get('role') === 'talent');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -160,8 +160,13 @@ $talentLoggedIn = session()->get('logged_in') && session()->get('role') === 'tal
       <a href="/talent/profile" class="<?= ($page ?? '') === 'talent-profile' ? 'active' : '' ?>">My Profile</a>
     </div>
     <div class="nav-cta">
-      <a href="/employer/discover" class="btn btn-outline-navy btn-sm">Find Talent</a>
-      <a href="/#waitlist" class="btn btn-primary btn-sm">Join Waitlist</a>
+      <?php if ($isLoggedIn ?? false): ?>
+        <span style="font-size:0.85rem;font-weight:600;color:var(--gray-500);"><?= esc($userName ?? '') ?></span>
+        <a href="/auth/logout" class="btn btn-primary btn-sm">Logout</a>
+      <?php else: ?>
+        <a href="/auth/login" class="btn btn-outline-navy btn-sm">Login</a>
+        <a href="/#waitlist" class="btn btn-primary btn-sm">Join Waitlist</a>
+      <?php endif ?>
     </div>
   </div>
 </nav>

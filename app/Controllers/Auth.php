@@ -42,7 +42,8 @@ class Auth extends BaseController
 
         if ($user['role'] !== $role) {
             $expected = $role === 'employer' ? 'Talent' : 'Employer';
-            return redirect()->to('/auth/login')->withInput()
+            // Don't use withInput() — role tab would persist and cause a loop
+            return redirect()->to('/auth/login')
                 ->with('error', "This account is registered as {$expected}. Please use the correct login tab.");
         }
 

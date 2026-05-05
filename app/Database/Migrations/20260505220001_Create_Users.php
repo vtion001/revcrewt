@@ -10,6 +10,7 @@ class CreateUsers extends Migration
     {
         $this->forge->addField([
             'id' => ['type' => 'INT', 'constraint' => 11, 'unsigned' => true, 'auto_increment' => true],
+            'name' => ['type' => 'VARCHAR', 'constraint' => 255],
             'email' => ['type' => 'VARCHAR', 'constraint' => 255, 'unique' => true],
             'password_hash' => ['type' => 'VARCHAR', 'constraint' => 255],
             'role' => ['type' => 'ENUM', 'constraint' => ['talent', 'employer'], 'default' => 'talent'],

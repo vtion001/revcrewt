@@ -36,6 +36,5 @@
   }, { threshold: 0.1 });
   reveals.forEach(el => obs.observe(el));
 </script>
-
 </body>
 </html>

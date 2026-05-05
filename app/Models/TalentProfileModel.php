@@ -14,9 +14,14 @@ class TalentProfileModel extends Model
         'salary_min', 'salary_max', 'profile_completion', 'is_premium', 'verified_badge',
         'created_at', 'updated_at'
     ];
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $createdField = 'created_at';
     protected $updatedField = 'updated_at';
+
+    public function findByUserId(int $userId): ?array
+    {
+        return $this->where('user_id', $userId)->first();
+    }
 
     public function withUser()
     {

@@ -1,3 +1,6 @@
+<?php
+$talentLoggedIn = session()->get('logged_in') && session()->get('role') === 'talent';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -165,6 +168,18 @@
 
 <div class="dash-body">
   <div class="dash-inner">
+
+    <?php if (!$talentLoggedIn): ?>
+    <!-- Login Gate -->
+    <div style="background:var(--white);border-radius:20px;border:1.5px solid var(--gray-100);padding:3rem 2rem;text-align:center;max-width:480px;margin:0 auto;">
+      <div style="width:64px;height:64px;border-radius:18px;background:var(--cobalt-100);margin:0 auto 1.5rem;display:flex;align-items:center;justify-content:center;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--cobalt)" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <h2 style="font-size:1.3rem;font-weight:800;color:var(--navy);margin-bottom:0.75rem;">Sign in to view your profile</h2>
+      <p style="font-size:0.88rem;color:var(--gray-500);margin-bottom:1.75rem;line-height:1.7;">Please log in to view and manage your talent profile.</p>
+      <a href="/auth/login" class="btn btn-primary" style="padding:0.85rem 2.5rem;border-radius:12px;font-size:0.95rem;font-weight:700;display:inline-flex;">Sign In</a>
+    </div>
+    <?php else: ?>
 
     <div class="page-head">
       <h1>My Profile</h1>
@@ -366,6 +381,18 @@
         </div>
       </div>
 
+      <!-- Incoming Offers (visible when logged in as talent) -->
+      <div class="form-section" id="incoming-offers-section" style="display:<?= $talentLoggedIn ? 'block' : 'none' ?>;">
+        <div class="form-section-title">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 2.92 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+          Incoming Offers
+        </div>
+        <div id="incoming-offers-empty" style="display:none;text-align:center;padding:2rem 1rem;background:var(--gray-50);border-radius:12px;border:1.5px dashed var(--gray-200);">
+          <div style="font-size:0.88rem;color:var(--gray-400);">No offers yet. Employers will reach out when they find you.</div>
+        </div>
+        <div id="incoming-offers-list"></div>
+      </div>
+
       <!-- Save -->
       <div class="save-section">
         <button type="button" class="btn btn-outline-navy" style="padding:0.75rem 1.75rem;">Cancel</button>
@@ -374,6 +401,7 @@
 
     </form>
   </div>
+  <?php endif // talentLoggedIn ?>
 </div>
 
 <footer class="footer">
@@ -439,6 +467,93 @@
       }, 2000);
     }, 1000);
   });
+
+  // Load incoming offers
+  function loadIncomingOffers() {
+    fetch('/api/offers/incoming')
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        var offers = data.offers || [];
+        var container = document.getElementById('incoming-offers-list');
+        var emptyState = document.getElementById('incoming-offers-empty');
+        if (!container) return;
+
+        if (offers.length === 0) {
+          container.style.display = 'none';
+          if (emptyState) emptyState.style.display = 'block';
+          return;
+        }
+        if (emptyState) emptyState.style.display = 'none';
+        container.innerHTML = offers.map(function(o) {
+          var statusBadge = '';
+          if (o.status === 'pending') {
+            statusBadge = '<span style="display:inline-flex;padding:0.25rem 0.75rem;border-radius:100px;font-size:0.75rem;font-weight:700;background:rgba(234,179,8,0.1);color:#92400e;">Pending</span>';
+          } else if (o.status === 'accepted') {
+            statusBadge = '<span style="display:inline-flex;padding:0.25rem 0.75rem;border-radius:100px;font-size:0.75rem;font-weight:700;background:rgba(22,163,74,0.1);color:#166534;">Accepted</span>';
+          } else if (o.status === 'declined') {
+            statusBadge = '<span style="display:inline-flex;padding:0.25rem 0.75rem;border-radius:100px;font-size:0.75rem;font-weight:700;background:rgba(239,68,68,0.1);color:#991b1b;">Declined</span>';
+          }
+          var typeLabel = o.type === 'free_interview' ? 'Free Interview' : o.type === 'paid_interview' ? 'Paid Interview' : 'Paid Assessment';
+          var btnHtml = '';
+          if (o.status === 'pending') {
+            btnHtml = '<div style="display:flex;gap:0.5rem;margin-top:0.75rem;">' +
+              '<button onclick="respondOffer(' + o.id + ', \'accept\')" style="flex:1;padding:0.55rem;border-radius:8px;background:var(--cobalt);color:var(--white);border:none;font-size:0.82rem;font-weight:700;cursor:pointer;font-family:inherit;">Accept</button>' +
+              '<button onclick="respondOffer(' + o.id + ', \'decline\')" style="flex:1;padding:0.55rem;border-radius:8px;background:transparent;color:#ef4444;border:1.5px solid #fca5a5;font-size:0.82rem;font-weight:700;cursor:pointer;font-family:inherit;">Decline</button>' +
+            '</div>';
+          }
+          return '<div style="background:var(--gray-50);border-radius:12px;padding:1.25rem;border:1.5px solid var(--gray-100);margin-bottom:0.9rem;">' +
+            '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;">' +
+              '<div>' +
+                '<div style="font-size:0.95rem;font-weight:700;color:var(--navy);margin-bottom:0.2rem;">' + (o.employer_name || 'Employer') + '</div>' +
+                '<div style="font-size:0.82rem;color:var(--gray-500);margin-bottom:0.5rem;">' + (o.subject || '-') + ' &middot; ' + typeLabel + '</div>' +
+                (o.proposed_salary ? '<div style="font-size:0.82rem;font-weight:600;color:var(--cobalt);margin-bottom:0.35rem;">' + o.proposed_salary + '</div>' : '') +
+                (o.message ? '<div style="font-size:0.82rem;color:var(--gray-500);margin-bottom:0.5rem;line-height:1.6;">' + o.message + '</div>' : '') +
+                btnHtml +
+              '</div>' +
+              '<div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.5rem;flex-shrink:0;">' +
+                statusBadge +
+                '<span style="font-size:0.72rem;color:var(--gray-400);">' + timeAgo(o.created_at) + '</span>' +
+              '</div>' +
+            '</div>' +
+          '</div>';
+        }).join('');
+      })
+      .catch(function() {});
+  }
+
+  function timeAgo(dateStr) {
+    if (!dateStr) return '';
+    var date = new Date(dateStr);
+    var now = new Date();
+    var diff = Math.floor((now - date) / 1000);
+    if (diff < 60) return 'just now';
+    if (diff < 3600) return Math.floor(diff / 60) + 'm ago';
+    if (diff < 86400) return Math.floor(diff / 3600) + 'h ago';
+    return Math.floor(diff / 86400) + 'd ago';
+  }
+
+  function respondOffer(id, action) {
+    fetch('/api/offers/' + id + '/' + action, { method: 'POST' })
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        showToast(action === 'accept' ? 'Offer accepted!' : 'Offer declined.');
+        loadIncomingOffers();
+      })
+      .catch(function() {
+        showToast('Something went wrong.', true);
+      });
+  }
+
+  function showToast(msg, isError) {
+    var toast = document.getElementById('toast');
+    toast.textContent = msg;
+    toast.className = 'toast show' + (isError ? ' error' : '');
+    setTimeout(function() { toast.className = 'toast'; }, 3000);
+  }
+  window.showToast = showToast;
+
+  // Init
+  loadIncomingOffers();
 </script>
 </body>
 </html>

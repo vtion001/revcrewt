@@ -60,3 +60,23 @@ PYEOF
 ---
 
 _Last updated: May 6, 2026 — Yuri_
+
+## Quick Reference — Today's Work (May 6, 2026)
+
+### revcrewt — Inner Pages Rendering Fix ✅
+- Extracted inline CSS from `welcome_message.php` → `public/assets/css/style.css`
+- Extracted inline JS from `footer.php` → `public/assets/js/main.js`
+- All inner pages (how-it-works, for-employers, for-talent, pricing) now load with proper styling
+- **Bug fixed:** Discover nav link was unconditional — now gated behind `<?php if ($isLoggedIn && $role === 'employer') ?>`
+- **Bug fixed:** Registration form tabs causing field visibility issues (Playwright fill fails on hidden tab fields)
+- 62/62 E2E tests passing
+- Pushed to: https://github.com/vtion001/revcrewt.git
+
+### Tailscale Funnel
+- revcrewt accessible via: `https://macbook-pro.tail7ceefe.ts.net` (port 443)
+- Local: `http://localhost:3005`
+
+### Admin Users (same password: AdminPass123!)
+- admin.employer@revcrewt.com (employer) — ID 11
+- admin.talent@revcrewt.com (talent) — ID 12
+

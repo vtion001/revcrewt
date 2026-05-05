@@ -78,3 +78,36 @@ test.describe('Homepage', () => {
   });
 
 });
+
+  test('homepage nav has login button for anonymous users', async ({ page }) => {
+    // Use fresh context so no session
+    const browser = page.context().browser()!;
+    const anonCtx = await browser.newContext();
+    const anonPage = await anonCtx.newPage();
+    await anonPage.goto(`${BASE}/`);
+    await anonPage.waitForLoadState('networkidle');
+    // Login link/button should be visible in navbar
+    await expect(anonPage.locator('.navbar a[href="/auth/login"], .nav-cta a[href="/auth/login"], .navbar .btn-login, a[href="/auth/login"]').first()).toBeVisible({ timeout: 5000 });
+    // Join Waitlist should also be visible
+    await expect(anonPage.locator('a[href="#waitlist"]').first()).toBeVisible();
+    await anonCtx.close();
+  });
+
+  test('homepage nav shows logout for logged-in employer', async ({ page }) => {
+    const browser = page.context().browser()!;
+    const ctx = await browser.newContext();
+    const loggedInPage = await ctx.newPage();
+    // Log in as employer
+    await loggedInPage.goto(`${BASE}/auth/login`);
+    await loggedInPage.waitForLoadState('networkidle');
+    await loggedInPage.fill('#email', 'admin.employer@revcrewt.com');
+    await loggedInPage.fill('#password', 'AdminPass123!');
+    await loggedInPage.click('button[type=submit]');
+    await loggedInPage.waitForLoadState('networkidle');
+    // After login, nav should show Dashboard + Logout (even on /employer/discover)
+    const navText = await loggedInPage.locator('.navbar').first().textContent();
+    expect(navText ?? '').toMatch(/dashboard|logout|discover/i);
+    // Also verify Login button is NOT present
+    expect(navText ?? '').not.toMatch(/login/i);
+    await ctx.close();
+  });

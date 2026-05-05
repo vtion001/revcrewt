@@ -650,7 +650,17 @@
       <a href="/for-talent">For Talent</a>
       <a href="/pricing">Pricing</a>
     </div>
-    <a href="#waitlist" class="btn btn-primary btn-sm">Join Waitlist</a>
+    <?php if ($isLoggedIn): ?>
+      <?php if ($role === 'employer'): ?>
+        <a href="/employer/discover" class="btn btn-outline-navy btn-sm">Dashboard</a>
+      <?php else: ?>
+        <a href="/talent/profile" class="btn btn-outline-navy btn-sm">My Profile</a>
+      <?php endif ?>
+      <a href="/auth/logout" class="btn btn-primary btn-sm">Logout</a>
+    <?php else: ?>
+      <a href="/auth/login" class="btn btn-outline-navy btn-sm">Login</a>
+      <a href="#waitlist" class="btn btn-primary btn-sm">Join Waitlist</a>
+    <?php endif ?>
   </div>
 </nav>
 

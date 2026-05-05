@@ -451,7 +451,9 @@ $talentLoggedIn = session()->get('logged_in') && session()->get('role') === 'tal
   }
 
   // Form submit
-  document.getElementById('profile-form').addEventListener('submit', (e) => {
+  var profileForm = document.getElementById('profile-form');
+  if (profileForm) {
+    profileForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const btn = e.target.querySelector('button[type="submit"]');
     const original = btn.textContent;
@@ -466,7 +468,8 @@ $talentLoggedIn = session()->get('logged_in') && session()->get('role') === 'tal
         btn.disabled = false;
       }, 2000);
     }, 1000);
-  });
+    });
+  }
 
   // Load incoming offers
   function loadIncomingOffers() {

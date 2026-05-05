@@ -13,3 +13,11 @@ $routes->get('/pricing', 'Pricing::index');
 $routes->get('/employer/discover', 'Employer::index');
 $routes->get('/employer/talent/(:num)', 'Employer::talent/$1');
 $routes->get('/talent/profile', 'Talent::index');
+
+// API
+$routes->post('api/waitlist', 'Api::waitlist');
+$routes->get('api/waitlist/stats', 'Api::waitlistStats');
+$routes->get('api/talents', 'Api::talents');
+$routes->get('api/talents/(:num)', 'Api::talent/$1');
+
+return $routes;

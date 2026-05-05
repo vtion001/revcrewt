@@ -27,10 +27,10 @@ class Database extends Config
     public array $default = [
         'DSN'          => '',
         'hostname'     => 'localhost',
-        'username'     => '',
+        'username'     => 'root',
         'password'     => '',
-        'database'     => '',
-        'DBDriver'     => 'MySQLi',
+        'database'     => ROOTPATH . 'database/revcrewt.db',
+        'DBDriver'     => 'SQLite3',
         'DBPrefix'     => '',
         'pConnect'     => false,
         'DBDebug'      => true,

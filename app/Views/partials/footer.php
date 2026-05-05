@@ -1,6 +1,6 @@
 
 <!-- CTA BAR -->
-<section class="section-sm" style="background:var(--gray-50);border-top:1px solid var(--gray-100)">
+<section style="background:var(--gray-50);border-top:1px solid var(--gray-100);padding:5rem 2rem">
   <div class="container" style="text-align:center">
     <h2 class="headline-lg" style="margin-bottom:0.75rem">Ready to get started?</h2>
     <p class="body-lg" style="margin-bottom:2rem;max-width:400px;margin-left:auto;margin-right:auto">Join 1,200+ professionals already on the waitlist.</p>

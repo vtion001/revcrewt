@@ -645,10 +645,10 @@
   <div class="nav-inner">
     <div class="nav-logo">rev<span>crewt</span></div>
     <div class="nav-links">
-      <a href="#how-it-works">How It Works</a>
-      <a href="#for-employers">For Employers</a>
-      <a href="#for-talent">For Talent</a>
-      <a href="#pricing">Pricing</a>
+      <a href="/how-it-works">How It Works</a>
+      <a href="/for-employers">For Employers</a>
+      <a href="/for-talent">For Talent</a>
+      <a href="/pricing">Pricing</a>
     </div>
     <a href="#waitlist" class="btn btn-primary btn-sm">Join Waitlist</a>
   </div>
@@ -675,7 +675,7 @@
           Get Early Access
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <a href="#how-it-works" class="btn btn-outline-navy btn-lg">See How It Works</a>
+        <a href="/how-it-works" class="btn btn-outline-navy btn-lg">See How It Works</a>
       </div>
       <div class="hero-stats reveal" style="transition-delay:0.2s">
         <div class="hero-stat">
@@ -1119,11 +1119,31 @@
     proSub.style.display = 'none';
   });
 
-  // Waitlist
-  function handleWL(e) {
+  // Waitlist — real API submission
+  async function handleWL(e) {
     e.preventDefault();
-    document.querySelector('.wl-form').style.display = 'none';
-    document.getElementById('wl-success').style.display = 'block';
+    const form = document.querySelector('.wl-form');
+    const name = document.getElementById('wl-name').value;
+    const email = document.getElementById('wl-email').value;
+    const role = document.getElementById('wl-role').value;
+    try {
+      const res = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({ name, email, role }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        form.style.display = 'none';
+        const success = document.getElementById('wl-success');
+        success.style.display = 'block';
+        success.textContent = data.message + ' We will be in touch soon.';
+      } else {
+        alert(data.message || 'Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      alert('Network error. Please try again.');
+    }
   }
 </script>
 

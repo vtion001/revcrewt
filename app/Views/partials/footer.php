@@ -1,4 +1,3 @@
-
 <!-- CTA BAR -->
 <section style="background:var(--gray-50);border-top:1px solid var(--gray-100);padding:5rem 2rem">
   <div class="container" style="text-align:center">
@@ -26,15 +25,6 @@
   </div>
 </footer>
 
-<script>
-  window.addEventListener('scroll', () => {
-    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
-  });
-  const reveals = document.querySelectorAll('.reveal');
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => obs.observe(el));
-</script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

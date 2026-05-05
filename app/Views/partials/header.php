@@ -14,6 +14,7 @@ $pageTitle = $page_title ?? 'revcrewt';
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231e3a5f'/><text x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='Inter,sans-serif' font-weight='800' font-size='16'>r</text></svg>">
+  <link rel="stylesheet" href="/assets/css/style.css">
 <style>
 .notif-btn { position: relative; background: none; border: none; cursor: pointer; padding: 0.5rem; border-radius: 10px; display: flex; align-items: center; justify-content: center; transition: background 0.2s; color: var(--gray-500); }
 .notif-btn:hover { background: var(--gray-50); color: var(--navy); }
@@ -47,7 +48,9 @@ $pageTitle = $page_title ?? 'revcrewt';
       <a href="/for-employers" class="<?= ($page ?? '') === 'for-employers' ? 'active' : '' ?>">For Employers</a>
       <a href="/for-talent" class="<?= ($page ?? '') === 'for-talent' ? 'active' : '' ?>">For Talent</a>
       <a href="/pricing" class="<?= ($page ?? '') === 'pricing' ? 'active' : '' ?>">Pricing</a>
+      <?php if ($isLoggedIn && $role === 'employer'): ?>
       <a href="/employer/discover" class="<?= ($page ?? '') === 'employer-discover' ? 'active' : '' ?>">Discover</a>
+      <?php endif ?>
       <?php if ($isLoggedIn && $role === 'talent'): ?>
       <a href="/talent/profile" class="<?= ($page ?? '') === 'talent-profile' ? 'active' : '' ?>">My Profile</a>
       <?php endif ?>

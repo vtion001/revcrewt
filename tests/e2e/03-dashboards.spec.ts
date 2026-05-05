@@ -67,8 +67,17 @@ test.describe('Footer on All Pages', () => {
 
 test.describe('Navbar Links on Dashboard Pages', () => {
 
-  test('employer discover page nav has Discover link', async ({ page }) => {
+  test('employer discover page nav has Discover link after login', async ({ page }) => {
+    // Log in with the pre-seeded employer account
+    await page.goto(`${BASE}/auth/login`);
+    await page.waitForLoadState('networkidle');
+    await page.fill('#email', 'emp-nav-5194@test.com');
+    await page.fill('#password', 'TestPass123!');
+    await page.locator('#login-form').evaluate((form: HTMLFormElement) => form.submit());
+    await page.waitForLoadState('networkidle');
+    // Go to discover page — Discover should be in nav
     await page.goto(`${BASE}/employer/discover`);
+    await page.waitForLoadState('networkidle');
     await expect(page.locator('.nav-links a[href="/employer/discover"]')).toBeVisible();
   });
 

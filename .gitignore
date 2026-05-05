@@ -1,0 +1,9 @@
+writable/session/*
+!writable/session/.gitkeep
+writable/logs/*
+!writable/logs/.gitkeep
+writable/cache/*
+!writable/cache/.gitkeep
+vendor/
+.env
+*.log

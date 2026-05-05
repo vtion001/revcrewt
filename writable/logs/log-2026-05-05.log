@@ -22,3 +22,168 @@ in APPPATH/Views/welcome_message.php on line 479.
  7 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
  8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-05-05 14:13:44 --> ArgumentCountError: Too few arguments to function CodeIgniter\Router\RouteCollection::__construct(), 0 passed in /Users/archerterminez/Desktop/REPOSITORY/reverserecruitment/app/Config/Routes.php on line 5 and exactly 3 expected
+[Method: GET, Route: /]
+in SYSTEMPATH/Router/RouteCollection.php on line 280.
+ 1 APPPATH/Config/Routes.php(5): CodeIgniter\Router\RouteCollection->__construct()
+ 2 SYSTEMPATH/Router/RouteCollection.php(339): require('/Users/archerterminez/Desktop/REPOSITORY/reverserecruitment/app/Config/Routes.php')
+ 3 SYSTEMPATH/CodeIgniter.php(818): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH/CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-05-05 14:13:44 --> ArgumentCountError: Too few arguments to function CodeIgniter\Router\RouteCollection::__construct(), 0 passed in /Users/archerterminez/Desktop/REPOSITORY/reverserecruitment/app/Config/Routes.php on line 5 and exactly 3 expected
+[Method: GET, Route: how-it-works]
+in SYSTEMPATH/Router/RouteCollection.php on line 280.
+ 1 APPPATH/Config/Routes.php(5): CodeIgniter\Router\RouteCollection->__construct()
+ 2 SYSTEMPATH/Router/RouteCollection.php(339): require('/Users/archerterminez/Desktop/REPOSITORY/reverserecruitment/app/Config/Routes.php')
+ 3 SYSTEMPATH/CodeIgniter.php(818): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH/CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-05-05 14:13:44 --> ArgumentCountError: Too few arguments to function CodeIgniter\Router\RouteCollection::__construct(), 0 passed in /Users/archerterminez/Desktop/REPOSITORY/reverserecruitment/app/Config/Routes.php on line 5 and exactly 3 expected
+[Method: GET, Route: for-employers]
+in SYSTEMPATH/Router/RouteCollection.php on line 280.
+ 1 APPPATH/Config/Routes.php(5): CodeIgniter\Router\RouteCollection->__construct()
+ 2 SYSTEMPATH/Router/RouteCollection.php(339): require('/Users/archerterminez/Desktop/REPOSITORY/reverserecruitment/app/Config/Routes.php')
+ 3 SYSTEMPATH/CodeIgniter.php(818): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH/CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-05-05 14:13:44 --> ArgumentCountError: Too few arguments to function CodeIgniter\Router\RouteCollection::__construct(), 0 passed in /Users/archerterminez/Desktop/REPOSITORY/reverserecruitment/app/Config/Routes.php on line 5 and exactly 3 expected
+[Method: GET, Route: for-talent]
+in SYSTEMPATH/Router/RouteCollection.php on line 280.
+ 1 APPPATH/Config/Routes.php(5): CodeIgniter\Router\RouteCollection->__construct()
+ 2 SYSTEMPATH/Router/RouteCollection.php(339): require('/Users/archerterminez/Desktop/REPOSITORY/reverserecruitment/app/Config/Routes.php')
+ 3 SYSTEMPATH/CodeIgniter.php(818): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH/CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-05-05 14:13:44 --> ArgumentCountError: Too few arguments to function CodeIgniter\Router\RouteCollection::__construct(), 0 passed in /Users/archerterminez/Desktop/REPOSITORY/reverserecruitment/app/Config/Routes.php on line 5 and exactly 3 expected
+[Method: GET, Route: pricing]
+in SYSTEMPATH/Router/RouteCollection.php on line 280.
+ 1 APPPATH/Config/Routes.php(5): CodeIgniter\Router\RouteCollection->__construct()
+ 2 SYSTEMPATH/Router/RouteCollection.php(339): require('/Users/archerterminez/Desktop/REPOSITORY/reverserecruitment/app/Config/Routes.php')
+ 3 SYSTEMPATH/CodeIgniter.php(818): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH/CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-05-05 14:13:57 --> ArgumentCountError: Too few arguments to function CodeIgniter\Router\RouteCollection::__construct(), 0 passed in /Users/archerterminez/Desktop/REPOSITORY/reverserecruitment/app/Config/Routes.php on line 5 and exactly 3 expected
+[Method: GET, Route: /]
+in SYSTEMPATH/Router/RouteCollection.php on line 280.
+ 1 APPPATH/Config/Routes.php(5): CodeIgniter\Router\RouteCollection->__construct()
+ 2 SYSTEMPATH/Router/RouteCollection.php(339): require('/Users/archerterminez/Desktop/REPOSITORY/reverserecruitment/app/Config/Routes.php')
+ 3 SYSTEMPATH/CodeIgniter.php(818): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH/CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-05-05 14:13:57 --> ArgumentCountError: Too few arguments to function CodeIgniter\Router\RouteCollection::__construct(), 0 passed in /Users/archerterminez/Desktop/REPOSITORY/reverserecruitment/app/Config/Routes.php on line 5 and exactly 3 expected
+[Method: GET, Route: how-it-works]
+in SYSTEMPATH/Router/RouteCollection.php on line 280.
+ 1 APPPATH/Config/Routes.php(5): CodeIgniter\Router\RouteCollection->__construct()
+ 2 SYSTEMPATH/Router/RouteCollection.php(339): require('/Users/archerterminez/Desktop/REPOSITORY/reverserecruitment/app/Config/Routes.php')
+ 3 SYSTEMPATH/CodeIgniter.php(818): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH/CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-05-05 14:13:57 --> ArgumentCountError: Too few arguments to function CodeIgniter\Router\RouteCollection::__construct(), 0 passed in /Users/archerterminez/Desktop/REPOSITORY/reverserecruitment/app/Config/Routes.php on line 5 and exactly 3 expected
+[Method: GET, Route: for-employers]
+in SYSTEMPATH/Router/RouteCollection.php on line 280.
+ 1 APPPATH/Config/Routes.php(5): CodeIgniter\Router\RouteCollection->__construct()
+ 2 SYSTEMPATH/Router/RouteCollection.php(339): require('/Users/archerterminez/Desktop/REPOSITORY/reverserecruitment/app/Config/Routes.php')
+ 3 SYSTEMPATH/CodeIgniter.php(818): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH/CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-05-05 14:13:57 --> ArgumentCountError: Too few arguments to function CodeIgniter\Router\RouteCollection::__construct(), 0 passed in /Users/archerterminez/Desktop/REPOSITORY/reverserecruitment/app/Config/Routes.php on line 5 and exactly 3 expected
+[Method: GET, Route: for-talent]
+in SYSTEMPATH/Router/RouteCollection.php on line 280.
+ 1 APPPATH/Config/Routes.php(5): CodeIgniter\Router\RouteCollection->__construct()
+ 2 SYSTEMPATH/Router/RouteCollection.php(339): require('/Users/archerterminez/Desktop/REPOSITORY/reverserecruitment/app/Config/Routes.php')
+ 3 SYSTEMPATH/CodeIgniter.php(818): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH/CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-05-05 14:13:57 --> ArgumentCountError: Too few arguments to function CodeIgniter\Router\RouteCollection::__construct(), 0 passed in /Users/archerterminez/Desktop/REPOSITORY/reverserecruitment/app/Config/Routes.php on line 5 and exactly 3 expected
+[Method: GET, Route: pricing]
+in SYSTEMPATH/Router/RouteCollection.php on line 280.
+ 1 APPPATH/Config/Routes.php(5): CodeIgniter\Router\RouteCollection->__construct()
+ 2 SYSTEMPATH/Router/RouteCollection.php(339): require('/Users/archerterminez/Desktop/REPOSITORY/reverserecruitment/app/Config/Routes.php')
+ 3 SYSTEMPATH/CodeIgniter.php(818): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH/CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-05-05 14:14:06 --> ArgumentCountError: Too few arguments to function CodeIgniter\Router\RouteCollection::__construct(), 0 passed in /Users/archerterminez/Desktop/REPOSITORY/reverserecruitment/app/Config/Routes.php on line 5 and exactly 3 expected
+[Method: GET, Route: /]
+in SYSTEMPATH/Router/RouteCollection.php on line 280.
+ 1 APPPATH/Config/Routes.php(5): CodeIgniter\Router\RouteCollection->__construct()
+ 2 SYSTEMPATH/Router/RouteCollection.php(339): require('/Users/archerterminez/Desktop/REPOSITORY/reverserecruitment/app/Config/Routes.php')
+ 3 SYSTEMPATH/CodeIgniter.php(818): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH/CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-05-05 14:14:06 --> ArgumentCountError: Too few arguments to function CodeIgniter\Router\RouteCollection::__construct(), 0 passed in /Users/archerterminez/Desktop/REPOSITORY/reverserecruitment/app/Config/Routes.php on line 5 and exactly 3 expected
+[Method: GET, Route: how-it-works]
+in SYSTEMPATH/Router/RouteCollection.php on line 280.
+ 1 APPPATH/Config/Routes.php(5): CodeIgniter\Router\RouteCollection->__construct()
+ 2 SYSTEMPATH/Router/RouteCollection.php(339): require('/Users/archerterminez/Desktop/REPOSITORY/reverserecruitment/app/Config/Routes.php')
+ 3 SYSTEMPATH/CodeIgniter.php(818): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH/CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-05-05 14:14:06 --> ArgumentCountError: Too few arguments to function CodeIgniter\Router\RouteCollection::__construct(), 0 passed in /Users/archerterminez/Desktop/REPOSITORY/reverserecruitment/app/Config/Routes.php on line 5 and exactly 3 expected
+[Method: GET, Route: for-employers]
+in SYSTEMPATH/Router/RouteCollection.php on line 280.
+ 1 APPPATH/Config/Routes.php(5): CodeIgniter\Router\RouteCollection->__construct()
+ 2 SYSTEMPATH/Router/RouteCollection.php(339): require('/Users/archerterminez/Desktop/REPOSITORY/reverserecruitment/app/Config/Routes.php')
+ 3 SYSTEMPATH/CodeIgniter.php(818): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH/CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-05-05 14:14:06 --> ArgumentCountError: Too few arguments to function CodeIgniter\Router\RouteCollection::__construct(), 0 passed in /Users/archerterminez/Desktop/REPOSITORY/reverserecruitment/app/Config/Routes.php on line 5 and exactly 3 expected
+[Method: GET, Route: for-talent]
+in SYSTEMPATH/Router/RouteCollection.php on line 280.
+ 1 APPPATH/Config/Routes.php(5): CodeIgniter\Router\RouteCollection->__construct()
+ 2 SYSTEMPATH/Router/RouteCollection.php(339): require('/Users/archerterminez/Desktop/REPOSITORY/reverserecruitment/app/Config/Routes.php')
+ 3 SYSTEMPATH/CodeIgniter.php(818): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH/CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-05-05 14:14:06 --> ArgumentCountError: Too few arguments to function CodeIgniter\Router\RouteCollection::__construct(), 0 passed in /Users/archerterminez/Desktop/REPOSITORY/reverserecruitment/app/Config/Routes.php on line 5 and exactly 3 expected
+[Method: GET, Route: pricing]
+in SYSTEMPATH/Router/RouteCollection.php on line 280.
+ 1 APPPATH/Config/Routes.php(5): CodeIgniter\Router\RouteCollection->__construct()
+ 2 SYSTEMPATH/Router/RouteCollection.php(339): require('/Users/archerterminez/Desktop/REPOSITORY/reverserecruitment/app/Config/Routes.php')
+ 3 SYSTEMPATH/CodeIgniter.php(818): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH/CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
